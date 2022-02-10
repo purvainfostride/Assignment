@@ -1,18 +1,14 @@
 package pages;
 
-import test.Base;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFSheet;
+import java.util.concurrent.TimeUnit;
+
+import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
-import java.io.File;
-import java.io.FileInputStream;
-import java.time.Duration;
+import utility.Base;
 
 public class LoginPage extends Base{
-	
 	@FindBy(id="txtUsername") WebElement uname;
 	@FindBy(id="txtPassword") WebElement upass;
 	@FindBy (id="btnLogin") WebElement login_btn;
@@ -20,20 +16,21 @@ public class LoginPage extends Base{
 	public LoginPage() {
 		PageFactory.initElements(driver, this);
 	}
-	public String verify_UserLoggedIn() {
-		return driver.getTitle();
+	public String validate_user_on_loginpage() {
+		String validate = driver.getCurrentUrl();
+		Assert.assertEquals(validate, "https://opensource-demo.orangehrmlive.com/index.php/dashboard", "User is on Login Page");
+		return validate;
 	}
-	public void login() throws Throwable {
-		File source= new File("C:\\Users\\Purva\\eclipse-workspace\\OrangeHRM\\TestData\\OrangeHRMLive.xlsx"); 
-    	FileInputStream is=new FileInputStream(source);
-    	XSSFWorkbook wb= new XSSFWorkbook(is);
-    	XSSFSheet sheet= wb.getSheetAt(0);
-    	String username=sheet.getRow(1).getCell(0).getStringCellValue();
-    	String password=sheet.getRow(1).getCell(1).getStringCellValue();
+	public void credentials(String username, String password) throws Throwable {
      	uname.sendKeys(username);
-    	upass.sendKeys(password);
-    	driver.manage().timeouts().implicitlyWait(Duration.ofMillis(2000));
+    	upass.sendKeys(password);}
+    public void click_login() {
+    	driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
     	login_btn.click();
-    	wb.close();
     	}
+	public String validate_Login() {
+		String validateLogin= driver.getCurrentUrl();
+		Assert.assertEquals(validateLogin, "https://opensource-demo.orangehrmlive.com/index.php/dashboard", "User is on Home Page");
+		return validateLogin;
+	}
 }
