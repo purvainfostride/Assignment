@@ -10,6 +10,7 @@ import cucumber.api.junit.Cucumber;
 		features = {"C:\\Users\\Purva\\eclipse-workspace\\bddFramework.HRM\\src\\test\\java\\featureFiles\\Login.feature"},
 		glue = {"stepDefinitions"},
 		monochrome = true,
+		tags= {"@validcredentials"},
 		plugin = {"pretty","json:Report/Cucumber.json","junit:Report/XMLReport.xml",
         "html:Report/cucumberReport"}
 		)
