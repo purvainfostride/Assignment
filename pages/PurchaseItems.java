@@ -7,8 +7,8 @@ import org.openqa.selenium.support.PageFactory;
 import utility.Base;
 
 public class PurchaseItems extends Base{
-		@FindBy(linkText="Samsung galaxy s6") WebElement selecteditem;
-	 	@FindBy(xpath = "//button[contains(text(),'Place Order')]") WebElement placeorderbutton;
+	    @FindBy(linkText="Samsung galaxy s6") WebElement selecteditem;
+	    @FindBy(xpath = "//button[contains(text(),'Place Order')]") WebElement placeorderbutton;
 	    @FindBy(id = "name") WebElement name;
 	    @FindBy(id = "country") WebElement country;
 	    @FindBy(id = "city") WebElement city;
@@ -22,7 +22,6 @@ public class PurchaseItems extends Base{
 	    public PurchaseItems(){
 	        PageFactory.initElements(driver,this);
 	    }
-
 	    public void purchase() {
 	    	selecteditem.click();
 	        placeorderbutton.click();
