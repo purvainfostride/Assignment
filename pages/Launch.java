@@ -1,13 +1,11 @@
-
 package pages;
-
 
 import org.junit.Assert;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utility.Base;
+
 public class Launch extends Base{
 	@FindBy(id="signin2") WebElement signup_btn;
 	public Launch() {
