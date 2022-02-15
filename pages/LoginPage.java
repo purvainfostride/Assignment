@@ -1,13 +1,11 @@
 package pages;
 
 import java.time.Duration;
-
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utility.Base;
 
 public class LoginPage extends Base{
@@ -27,13 +25,8 @@ public class LoginPage extends Base{
 		obj.getSignupPage().enteruserpass();	
 		obj.getSignupPage().clickSignup();
 		login.click();
-		
 	}
-	
 	public void validate_login() {
 		Assert.assertTrue(checkvalidation.isDisplayed());
-		}
-	
-	
-	
+	}
 }
