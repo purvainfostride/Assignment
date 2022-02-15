@@ -1,12 +1,10 @@
 package pages;
 
 import java.time.Duration;
-
 import org.apache.commons.lang.RandomStringUtils;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-
 import utility.Base;
 
 public class SignupPage extends Base{
