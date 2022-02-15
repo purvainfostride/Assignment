@@ -2,6 +2,7 @@ package test_pages;
 
 import utility.Base;
 import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.AfterSuite;
 import org.testng.annotations.Test;
 
 public class testLaunch extends Base{
@@ -23,4 +24,8 @@ public class testLaunch extends Base{
 	public static void clickingSignupBtn() {
 		obj.getLaunch().clickSignup();	
 		}
+@AfterSuite
+	public void quit_Browser() {
+		obj.getBase().quitBrowser();;
+	}
 }
