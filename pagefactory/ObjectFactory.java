@@ -6,7 +6,6 @@ import pages.SignupPage;
 import pages.PurchaseItems;
 import utility.Base;
 
-
 public class ObjectFactory {
 	private Base BaseObj;
 	private Launch LaunchObj;
@@ -44,5 +43,4 @@ public class ObjectFactory {
 		}
 		return PurchaseItemObj;
 	}
-	
 }
