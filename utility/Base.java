@@ -38,8 +38,8 @@ public class Base {
 		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
 		driver.get(prop.getProperty("DemoblazeURL"));
 	}
-	//public static void quitBrowser() {
-		//	driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
-		//	driver.quit();
-		//}
+	public static void quitBrowser() {	
+		driver.manage().timeouts().implicitlyWait(Duration.ofMillis(1000));
+		driver.quit();
+		}
 }
