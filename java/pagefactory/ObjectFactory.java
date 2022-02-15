@@ -1,22 +1,48 @@
 package pagefactory;
 
-import pages.HomePage;
+import pages.Launch;
 import pages.LoginPage;
+import pages.SignupPage;
+import pages.PurchaseItems;
+import utility.Base;
+
 
 public class ObjectFactory {
-	private LoginPage LoginObj;
-	private HomePage HomeObj;
+	private Base BaseObj;
+	private Launch LaunchObj;
+	private SignupPage SignupPageObj;
+	private LoginPage LoginPageObj;
+	private PurchaseItems PurchaseItemObj;
 	
+	public Base getBase() {
+		if(BaseObj==null) {
+			BaseObj= new Base();
+		}
+		return BaseObj;
+	}
+	public Launch getLaunch() {
+		if(LaunchObj==null) {
+			LaunchObj= new Launch();
+		}
+		return LaunchObj;
+	}
+	public SignupPage getSignupPage() {
+		if(SignupPageObj==null) {
+			SignupPageObj= new SignupPage();
+		}
+		return SignupPageObj;
+	}
 	public LoginPage getLoginPage() {
-		if(LoginObj==null) {
-			LoginObj= new LoginPage();
+		if(LoginPageObj==null) {
+			LoginPageObj= new LoginPage();
 		}
-		return LoginObj;
+		return LoginPageObj;
 	}
-	public HomePage getHomePage() {
-		if(HomeObj==null) {
-			HomeObj= new HomePage();
+	public PurchaseItems getPurchaseItem() {
+		if(PurchaseItemObj==null) {
+			PurchaseItemObj= new PurchaseItems();
 		}
-		return HomeObj;
+		return PurchaseItemObj;
 	}
+	
 }
